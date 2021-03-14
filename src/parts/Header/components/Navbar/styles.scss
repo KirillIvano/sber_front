@@ -1,0 +1,23 @@
+@import "~vars/pads";
+@import "~vars/colors";
+@import "~vars/fonts";
+@import "~vars/screen";
+
+.nav {
+    display: flex;
+
+    .navItem {
+        margin-left: $pad6;
+        display: block;
+    }
+}
+
+.navHref {
+    font-size: $font_lg;
+}
+
+@media all and (max-width: $screen_sm) {
+    .navHref {
+        font-size: $font_sm;
+    }
+}

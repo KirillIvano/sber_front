@@ -1,0 +1,15 @@
+@import "~vars/colors";
+@import "~vars/fonts";
+
+.link {
+    display: block;
+
+    font-size: $font_lg;
+    color: $darken_green;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        color: $toxic;
+    }
+}

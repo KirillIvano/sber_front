@@ -1,0 +1,9 @@
+@import "~vars/pads";
+
+.workoutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: $pad8;
+}

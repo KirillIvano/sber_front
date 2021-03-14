@@ -1,0 +1,27 @@
+@import "~vars/colors";
+
+.root {
+    height: 100%;
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(circle at center, darken($toxic, 45) 0, transparent 500px),
+        repeating-linear-gradient(
+            to bottom,
+            $medium_green 0,
+            $medium_green 5px,
+            $dark_green 0,
+            $dark_green 10px
+        );
+
+    .header {
+        flex: 0 0 auto;
+    }
+
+    .content {
+        flex: 1 0 auto;
+    }
+}
