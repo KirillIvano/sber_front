@@ -1,0 +1,24 @@
+@import "~vars/colors";
+@import "~vars/pads";
+@import "~vars/fonts";
+
+.excerciseCard {
+    padding: $pad3;
+    width: 100%;
+
+    .excerciseName {
+        color: $toxic;
+        font-size: $font_lg;
+    }
+
+    .excerciseDescription {
+        margin-top: $pad2;
+
+        color: $darken_green;
+        font-size: $font_xs;
+    }
+
+    &:not(:first-child) {
+        border-top: 2px solid $toxic;
+    }
+}

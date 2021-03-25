@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import styles from './styles.scss';
-import {Icon, Navbar} from './components';
+import {Icon} from './components';
 
 
 type HeaderProps = {
@@ -12,7 +12,6 @@ type HeaderProps = {
 const Header = ({className}: HeaderProps) => (
     <header className={cn(styles.header, className)}>
         <Icon />
-        <Navbar />
     </header>
 );
 

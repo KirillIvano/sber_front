@@ -33,24 +33,22 @@ export const useSocketState = <TData,>(socketPath: string) => {
             setData(parsedData);
         };
 
-        const initSocket = () => {
-            const ws = new WebSocket(getSocketUrl(socketPath));
+        const ws = new WebSocket(getSocketUrl(socketPath));
 
-            ws.addEventListener('close', () => {
-                reset();
+        ws.addEventListener('close', () => {
+            reset();
+        });
 
-                initSocket();
-            });
+        ws.addEventListener('open', () => {
+            setConnecting(false);
+        });
 
-            ws.addEventListener('open', () => {
-                setConnecting(false);
-            });
+        ws.addEventListener('error', () => setError('Неожиданная ошибка на сервере'));
+        ws.addEventListener('message', ({data}) => handleData(data));
 
-            ws.addEventListener('error', () => setError('Неожиданная ошибка на сервере'));
-            ws.addEventListener('message', ({data}) => handleData(data));
+        return () => {
+            ws.close();
         };
-
-        initSocket();
     }, [socketPath]);
 
     return {

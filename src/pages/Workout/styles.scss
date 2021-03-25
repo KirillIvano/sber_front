@@ -1,9 +1,22 @@
 @import "~vars/pads";
+@import "~vars/colors";
+@import "~vars/fonts";
 
 .workoutPage {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 
+    padding: $pad4;
     padding-top: $pad8;
+
+    .workoutPersonContainer {
+        flex: 1 0 auto;
+    }
+
+    .workoutPanelsHeading {
+        margin: $pad4 0;
+
+        color: $toxic;
+        font-size: $font_lg;
+    }
 }

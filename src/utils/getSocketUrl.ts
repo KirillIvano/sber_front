@@ -1,2 +1,5 @@
+import {WS_API_ORIGIN} from '@/settings';
+
+
 export const getSocketUrl = (path: string) =>
-    `ws://training-assistant-app.herokuapp.com${path}`;
+    `${WS_API_ORIGIN}${path}`;

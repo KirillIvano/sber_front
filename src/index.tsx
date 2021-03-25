@@ -1,8 +1,9 @@
+import 'focus-visible';
+import 'babel-polyfill';
 import React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
-import 'focus-visible';
 
 import './main.scss';
 import icon from './favicon.ico';

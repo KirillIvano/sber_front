@@ -1,0 +1,32 @@
+@import "~vars/colors";
+@import "~vars/pads";
+@import "~vars/fonts";
+
+.currentExcerciseCard {
+    display: flex;
+    flex-direction: column;
+
+    padding: $pad4;
+    border: 2px solid $toxic;
+
+    color: $toxic;
+
+    .name {
+        color: $toxic;
+        font-size: $font_xl;
+    }
+
+    .emptyName {
+        color: $toxic;
+        font-size: $font_lg;
+    }
+}
+
+.excerciseTimer {
+    align-self: center;
+
+    padding: $pad4;
+
+    color: $toxic;
+    font-size: $font_lg;
+}

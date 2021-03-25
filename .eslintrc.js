@@ -37,7 +37,7 @@ module.exports = {
         'arrow-spacing': ['error'],
         'prefer-arrow-callback': ['error'],
         'prefer-const': ['error'],
-        'camelcase': ['error'],
+        'camelcase': ['off'],
         'comma-dangle': ['error', 'always-multiline'],
         'eol-last': ['error'],
         'key-spacing': ['error'],
