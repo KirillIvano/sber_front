@@ -39,17 +39,15 @@ const ExcercisesPanel = ({
     containerClass,
 }: ExcercisesPanelProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
 
     const [scrollState, setScrollState] = useState<ScrollStateType>(null);
 
     useEffect(() => {
-        if (scrollContainerRef.current && contentRef.current) {
+        if (scrollContainerRef.current) {
             const {current: scrollContainer} = scrollContainerRef;
-            const {current: scrollContent} = contentRef;
 
             const handleScroll = () => {
-                if (scrollContent.offsetHeight < scrollContainer.offsetHeight) {
+                if (scrollContainer.scrollHeight < 120) {
                     setScrollState(null);
                 } else if (scrollContainer.scrollTop <= 0) {
                     setScrollState('end');
@@ -60,7 +58,7 @@ const ExcercisesPanel = ({
                 }
             };
 
-            const debouncedHandleScroll = debounceFn(handleScroll, 30);
+            const debouncedHandleScroll = debounceFn(handleScroll, 100);
 
             scrollContainer.addEventListener('scroll', debouncedHandleScroll);
 

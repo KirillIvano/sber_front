@@ -80,8 +80,9 @@ class TrainPageStorageBase {
             return;
         }
 
-        const excerciseId = this._excercises.shift();
-        const excercise = excercisesStore.getExcerciseById(excerciseId as number);
+        // проверка на наличие элемента выше
+        const excerciseId = this._excercises.shift() as number;
+        const excercise = excercisesStore.getExcerciseById(excerciseId);
 
         if (!excercise) {
             throw new Error('Ошибка при начале нового упражнения');
@@ -119,8 +120,7 @@ class TrainPageStorageBase {
         const res = await getRandomExcercise([]);
 
         if (res.ok) {
-            const {data: excerciseRaw} = res;
-            const excercise = {...excerciseRaw, duration: 10000};
+            const {data: excercise} = res;
 
             excercisesStore.addExcercise(excercise);
 
